@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Importing Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Salman Ahmad</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <main class="main main-error">
+        <h1>404 - Page Not Found</h1>
+        <p>
+            Sorry, we couldn't find the page you are looking for.
+            It may have been misspelled, or it doesn't exist anymore.
+        </p>
+        <a href="{{url_for('home')}}">Go to home</a>
+    </main>
+</body>
+</html>
