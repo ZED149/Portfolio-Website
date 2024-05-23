@@ -150,6 +150,9 @@ body{
 .hero{
     width: 100%;
     margin-bottom: 1.5rem;
+    border:1px solid #021a40;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px #021a40;
 }
 
 .project{

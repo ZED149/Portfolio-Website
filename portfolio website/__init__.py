@@ -11,15 +11,13 @@ from project import Project
 app = Flask(__name__)
 
 # loading all projects from db
-projects = Project.load_projects_from_db()
+projects = Project.load_projects_from_db("project.db")
 
-# storing dict form of our projects
+# storing dict form of our projects in a list
 projects = [p.get() for p in projects]
 
 # storing project slugs
-project_slugs = {   
-    project["slug"]: project for project in projects
-}
+project_slugs = Project.get_project_slugs(projects=projects)
 
 # setting jinga2 to remove backspaces from the html code
 # These two lines of code will remove extra spacing from HTML code
@@ -53,10 +51,11 @@ def about():
 def project(slug):
     if slug not in project_slugs:
         abort(404)
-    check = project_slugs[slug]
+    technologies_used = project_slugs[slug]['technologies_used']
     return render_template(
         f"project_{slug}.html",
-        project=project_slugs[slug])
+        project=project_slugs[slug],
+        technologies_used=technologies_used)
 
 
 # handling errors

@@ -27,10 +27,9 @@
                         </h3>
 
                         <ul class="technology-list">
-                            <li class="technology-list__item">Matplotlib</li>
-                            <li class="technology-list__item">CSV</li>
-                            <li class="technology-list__item">Pandas</li>
-                            <li class="technology-list__item">Python</li>
+                            {% for technology in technologies_used %}
+                            <li class="technology-list__item">{{technology}}</li>
+                            {% endfor %}
                         </ul>
                     </article>
 

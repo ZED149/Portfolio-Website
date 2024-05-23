@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
-    <main class="main main-project">
+<main class="main main-project">
         <div>
             <img class="hero" src="{{url_for('static', filename=project['hero'])}}"
                  alt="A hand holding a pen, about to write something in a project planner."/>
@@ -46,9 +42,4 @@
             </article>
         </div>
     </main>
-{% endblock %}</title>
-</head>
-<body>
-
-</body>
-</html>
+{% endblock %}
