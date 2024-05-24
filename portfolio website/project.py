@@ -14,19 +14,20 @@ class Project:
     """
 
     # Private data members
-    __name: str = ""
-    __thumbnail: str = ""
-    __hero: str = ""
-    __categories: [str] = []
-    __slug: str = ""
-    __technologies_used: [str] = []
-    __prod: str = ""
+    __name: str = ""                    # Name of the Project
+    __thumbnail: str = ""               # Thumbnail Image of the Project
+    __hero: str = ""                    # Hero Image for the Project
+    __categories: [str] = []            # Categories around which project revolves
+    __slug: str = ""                    # Slug for the project
+    __technologies_used: [str] = []     # Technologies Used in this project
+    __title: str = ""                   # Title to show on the HTML Document
+    __prod: str = ""                    # Production Link of the project
 
     # Constructor
 
     # Default Constructor
     def __init__(self, name: str, thumbnail: str, hero: str, categories: [str]
-                 , slug: str, technologies_used: [str], prod: str = "#"):
+                 , slug: str, technologies_used: [str], title: str, prod: str = "#"):
         """
         Initializes the private variables and sets the context of the object.
         :param name: Name of the project
@@ -35,6 +36,7 @@ class Project:
         :param categories: list of categories of the project
         :param slug: slug of the project
         :param technologies_used: list of technologies used in the project.
+        :param title: title of the project.
         :param prod: link of the project in the production
         """
         # initializing private variables
@@ -44,6 +46,7 @@ class Project:
         self.__categories = categories
         self.__slug = slug
         self.__technologies_used = technologies_used
+        self.__title = title
         self.__prod = prod
 
     # Getters
@@ -62,6 +65,7 @@ class Project:
             "categories": self.__categories,
             "slug": self.__slug,
             "technologies_used": self.__technologies_used,
+            "title": self.__title,
             "prod": self.__prod
         }
 
@@ -111,6 +115,6 @@ class Project:
             technology_used_temp = [tech for tech in entry[7].split(", ")]
             # initializing and appending each Project object
             projects.append(Project(entry[0], entry[1], entry[2], categories_temp,
-                                    entry[4], technology_used_temp, entry[5]))
+                                    entry[4], technology_used_temp, entry[8], entry[5]))
 
         return projects

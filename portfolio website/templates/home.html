@@ -2,7 +2,6 @@
 {% block content %}
 <main class="main main--home">
     <section class="projects">
-        {% set counter = 0 %}
         {% for index, project in enumerate(projects) %}
             {% if (index % 3) == 0 and index != 0%}
                 <div class="line__break"></div>

@@ -52,10 +52,12 @@ def project(slug):
     if slug not in project_slugs:
         abort(404)
     technologies_used = project_slugs[slug]['technologies_used']
+    title = f"ZED | {project_slugs[slug]['title']}"
     return render_template(
-        f"project_{slug}.html",
+        f"projects/project_{slug}.html",
         project=project_slugs[slug],
-        technologies_used=technologies_used)
+        technologies_used=technologies_used,
+        title=title)
 
 
 # handling errors
