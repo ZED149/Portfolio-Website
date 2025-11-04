@@ -26,6 +26,14 @@ app.jinja_env.lstrip_blocks = True
 app.jinja_env.trim_blocks = True
 
 
+def create_app():
+    # creating app object
+    app = Flask(__name__)
+
+    # running our app
+    app.run(debug=True)
+
+
 # writing ENDPOINTS for the website
 # home
 @app.route("/")
@@ -67,4 +75,5 @@ def page_not_found(error):
 
 
 # running our app
-app.run()
+if __name__ == "__main__":
+    create_app()
