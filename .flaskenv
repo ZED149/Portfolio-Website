@@ -1,2 +1,2 @@
-FLASK_APP=portfolio
+FLASK_APP=portfolio website
 FLASK_ENV=development

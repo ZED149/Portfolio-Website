@@ -89,11 +89,17 @@ class Project:
         :return: A list of projects.
         """
 
-        base = os.path.abspath("databases/")
-        db_path = f"{base}/{database_filename}"
+        # Getting path of Project Root Directory
+        project_root = os.path.dirname(os.path.realpath(__file__))
+        # joining name of the file
+        db_name_folder = os.path.join(project_root, "databases", "project.db")
 
         # making connection to the database.
-        conn = sqlite3.connect(db_path)
+        try:
+            conn = sqlite3.connect(db_name_folder)
+        except Exception as e:
+            raise Exception("Could not connect to database")
+
         # creating cursor
         cursor = conn.cursor()
         # reading all entries from db

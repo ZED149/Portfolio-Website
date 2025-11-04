@@ -1,11 +1,11 @@
 # This file contains the Flask app for my Portfolio Website
 # Developed and maintained by Salman Ahmad.
 # Created on 24-4-2024
-
+import os.path
 
 # importing some important libraries and classes
 from flask import Flask, render_template, abort
-from project import Project
+from .project import Project
 
 # initializing our app object
 app = Flask(__name__)
